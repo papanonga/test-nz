@@ -1,0 +1,46 @@
+@base_url = http://localhost
+@port = 8080
+@url = {{base_url}}:{{port}}
+
+@food_api = {{url}}/foods
+
+// find all
+GET {{food_api}} HTTP/1.1
+###
+
+
+// find by name 
+@food_name = ""
+GET {{food_api}}/name/{{food_name}} HTTP/1.1
+###
+
+// insert
+POST {{food_api}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": " ",
+    "price": 0
+}
+###
+
+//update
+PUT {{food_api}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "newName": "new food name",
+    "oldName": "old food name"
+}
+###
+
+
+DELETE {{food_api}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "new"
+}
+
+
+
